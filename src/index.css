@@ -1,0 +1,7 @@
+@import "tailwindcss";
+
+@theme {
+  --default-font-family: "Courier New", Courier, monospace;
+  --color-brand-main: rgb(47, 255, 64);
+  --color-brand-secondary: rgb(0, 0, 0);
+}

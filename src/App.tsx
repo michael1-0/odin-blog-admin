@@ -1,9 +1,21 @@
 import { useState } from "react";
 import { Outlet, Link } from "react-router";
+import { jwtDecode } from "jwt-decode";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState<boolean>(() => {
-    return !!localStorage.getItem("token");
+    const token = localStorage.getItem("token");
+    if (!token) return false;
+
+    const decodedToken = jwtDecode(token);
+    const expiry = decodedToken.exp;
+    if (!expiry) return false;
+    if (expiry < Math.floor(Date.now() / 1000)) {
+      localStorage.removeItem("token")
+      return false;
+    }
+
+    return true;
   });
 
   function handleLogOutClick() {

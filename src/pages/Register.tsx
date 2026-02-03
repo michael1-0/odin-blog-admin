@@ -5,6 +5,7 @@ function Register() {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [confirmPassword, setConfirmPassword] = useState<string>("");
+  const [secret, setSecret] = useState<string>("");
   const [errors, setErrors] = useState<{ msg: string }[]>([]);
 
   const [isLoggedIn, setIsLoggedIn] =
@@ -31,6 +32,12 @@ function Register() {
     setConfirmPassword(e.target.value);
   }
 
+  function handleSecretChange(
+    e: React.ChangeEvent<HTMLInputElement, HTMLInputElement>,
+  ) {
+    setSecret(e.target.value);
+  }
+
   function handleFormSubmit(e: React.SubmitEvent<HTMLFormElement>) {
     e.preventDefault();
 
@@ -43,6 +50,7 @@ function Register() {
       email: email,
       password: password,
       confirmPassword: password,
+      secret: secret,
     });
 
     fetch(import.meta.env.VITE_API_URL + "sign-up", {
@@ -123,7 +131,19 @@ function Register() {
             onChange={(e) => handleConfirmPasswordChange(e)}
           />
         </div>
-        <button type="submit" className="shadow-md rounded-md p-4">Submit</button>
+        <div className="flex flex-col items-stretch">
+          <label htmlFor="secret">Secret:</label>
+          <input
+            type="text"
+            name="secret"
+            className="border-b-2"
+            value={secret}
+            onChange={(e) => handleSecretChange(e)}
+          />
+        </div>
+        <button type="submit" className="shadow-md rounded-md p-4">
+          Submit
+        </button>
       </form>
     </div>
   );

@@ -60,9 +60,9 @@ function NewPost() {
   }
 
   return (
-    <div>
+    <div className="shadow-md rounded-md p-4">
       <form
-        className="border-2 p-4 flex flex-col items-stretch gap-4"
+        className="flex flex-col items-stretch gap-4"
         onSubmit={(e) => handleFormSubmit(e)}
       >
         <div className="text-4xl text-center">New Post</div>
@@ -101,7 +101,7 @@ function NewPost() {
           />
           <label htmlFor="draft">Draft</label>
         </div>
-        <button type="submit">Submit</button>
+        <button type="submit" className="shadow-md rounded-md p-4">Submit</button>
       </form>
     </div>
   );

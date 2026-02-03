@@ -73,13 +73,13 @@ function Home() {
   }
 
   return (
-    <div className="flex flex-col items-stretch">
+    <div className="flex flex-col items-stretch ">
       <Link to="/posts/new" className="underline text-center text-xl">
         New Post
       </Link>
       {posts?.map((post) => (
         <div key={post.id} className="p-2 my-2">
-          <div className="p-2 flex justify-between items-center shadow-lg shadow-brand-main rounded-md gap-4 animate-glow">
+          <div className="p-2 flex justify-between items-center shadow-lg rounded-md gap-4">
             <div className="flex-2 max-w-xl">
               <h1 className="text-3xl">{post.title}</h1>
               <div>{post.content.slice(0, 14) + "..."}</div>

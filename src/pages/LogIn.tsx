@@ -67,7 +67,7 @@ function LogIn() {
   }
 
   return (
-    <div className="border-2 p-4">
+    <div className="shadow-lg rounded-md p-6">
       <form
         action=""
         className="flex flex-col items-stretch content gap-6"
@@ -100,7 +100,7 @@ function LogIn() {
             onChange={(e) => handlePasswordChange(e)}
           />
         </div>
-        <button type="submit">Submit</button>
+        <button type="submit" className="shadow-md rounded-md p-4">Submit</button>
       </form>
     </div>
   );

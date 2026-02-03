@@ -11,7 +11,7 @@ function App() {
     const expiry = decodedToken.exp;
     if (!expiry) return false;
     if (expiry < Math.floor(Date.now() / 1000)) {
-      localStorage.removeItem("token")
+      localStorage.removeItem("token");
       return false;
     }
 
@@ -26,7 +26,7 @@ function App() {
   return (
     <>
       <div className="min-h-dvh flex flex-col justify-between items-stretch  bg-brand-secondary text-brand-main sm:px-30 md:px-50 lg:px-50 xl:px-60 2xl:px-160">
-        <header className="flex justify-between p-4 sticky top-0 backdrop-blur-2xl">
+        <header className="flex justify-between p-4 sticky top-0 bg-brand-secondary">
           <div>Blog Admin</div>
           <div className="flex gap-4">
             <Link to="/">Home</Link>

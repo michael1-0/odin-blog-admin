@@ -109,7 +109,7 @@ function EditPost() {
     <div className="flex flex-col gap-6">
       <form
         onSubmit={(e) => handleFormSubmit(e)}
-        className="border-2 p-4 flex flex-col items-stretch gap-4"
+        className="shadow-md rounded-md p-6 flex flex-col items-stretch gap-4"
       >
         <div className="text-2xl text-center">Edit Post</div>
         {errors &&
@@ -144,11 +144,11 @@ function EditPost() {
           />
           <label htmlFor="draft">Draft</label>
         </div>
-        <button type="submit">Submit</button>
+        <button type="submit" className="shadow-md rounded-md p-4">Submit</button>
       </form>
       {comments?.map((comment) => (
         <div
-          className="shadow-xs shadow-brand-main p-2 rounded-md flex flex-col"
+          className="shadow-md p-2 rounded-md flex flex-col"
           key={comment.id}
         >
           <div className="text-2xl">{comment.username} says:</div>
